@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MINDMETRIX - modern aptitude assessment platform" />
+  <title>MINDMETRIX | Aptitude Test</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="toast" class="toast"></div>
+
+  <header class="navbar">
+    <a class="brand" href="#" data-screen="home">
+      <span class="brand-mark">✓</span>
+      <span>MIND<span>METRIX</span></span>
+    </a>
+    <nav class="nav-links">
+      <button data-screen="home">Home</button>
+      <button data-screen="dashboard">Dashboard</button>
+      <button data-screen="how">How It Works</button>
+    </nav>
+    <div class="nav-actions">
+      <button id="themeBtn" class="icon-btn" title="Toggle dark mode">☾</button>
+      <button id="profileBtn" class="profile-chip">Guest</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= PHASE 1: CORE EXPERIENCE ================= -->
+    <section id="homeScreen" class="screen active">
+      <div class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">PHASE 1 • CORE EXPERIENCE</span>
+          <h1>Test your skills.<br /><span>Track your progress.</span></h1>
+          <p>Challenge yourself with quantitative, logical and verbal aptitude questions in a clean, timed assessment.</p>
+          <div class="hero-buttons">
+            <button class="primary-btn" data-action="open-test">Start Test →</button>
+            <button class="secondary-btn" data-screen="how">How it works</button>
+          </div>
+          <div class="trust-row">
+            <span>✓ 20 Questions</span>
+            <span>✓ 15 Minutes</span>
+            <span>✓ 3 Categories</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="floating-card card-one">🧠 <b>Strong</b><small>Logical Reasoning</small></div>
+          <div class="dashboard-mock">
+            <div class="mock-top"><span>Performance</span><b>82%</b></div>
+            <div class="mock-bars">
+              <div><i style="height:72%"></i><small>Q</small></div>
+              <div><i style="height:90%"></i><small>L</small></div>
+              <div><i style="height:64%"></i><small>V</small></div>
+              <div><i style="height:84%"></i><small>A</small></div>
+            </div>
+            <div class="mock-line"></div>
+            <div class="mock-stat"><span>Average Score</span><b>16.4/20</b></div>
+          </div>
+          <div class="floating-card card-two">⏱️ <b>12:48</b><small>Time Remaining</small></div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-heading">
+          <span class="eyebrow">WHY MINDMETRIX?</span>
+          <h2>Everything you need for smarter practice</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card"><div class="feature-icon">🧠</div><h3>Test Your Skills</h3><p>Practice real aptitude patterns across multiple categories.</p></article>
+          <article class="feature-card"><div class="feature-icon">📊</div><h3>Track Performance</h3><p>Understand your strengths and areas that need improvement.</p></article>
+          <article class="feature-card"><div class="feature-icon">🎯</div><h3>Improve Strategically</h3><p>Use explanations and category scores to guide your practice.</p></article>
+          <article class="feature-card"><div class="feature-icon">⚡</div><h3>Timed Challenge</h3><p>Build speed and accuracy with a realistic 15-minute test.</p></article>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-heading">
+          <span class="eyebrow">CATEGORIES</span>
+          <h2>Choose your challenge</h2>
+        </div>
+        <div class="category-grid">
+          <article class="category-card quantitative"><span>🔢</span><div><h3>Quantitative</h3><p>Numbers, ratios, percentages, speed and probability.</p></div></article>
+          <article class="category-card logical"><span>🧩</span><div><h3>Logical</h3><p>Patterns, coding-decoding, series and reasoning.</p></div></article>
+          <article class="category-card verbal"><span>📖</span><div><h3>Verbal</h3><p>Vocabulary, grammar, synonyms and sentence correction.</p></div></article>
+        </div>
+      </div>
+
+      <div class="section-block steps">
+        <div class="section-heading"><span class="eyebrow">HOW IT WORKS</span><h2>Three simple steps</h2></div>
+        <div class="step-grid">
+          <div class="step"><b>01</b><h3>Enter Details</h3><p>Tell us who you are and choose your challenge.</p></div>
+          <div class="step"><b>02</b><h3>Take the Test</h3><p>Answer 20 questions before the timer ends.</p></div>
+          <div class="step"><b>03</b><h3>See Your Result</h3><p>Review your score, categories and explanations.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="detailsScreen" class="screen">
+      <div class="form-shell">
+        <div class="section-heading centered"><span class="eyebrow">GET STARTED</span><h2>Tell us about yourself</h2><p>Your information is stored only in this browser for this demo.</p></div>
+        <form id="detailsForm" class="details-form">
+          <label>Full Name<input id="nameInput" required placeholder="Enter your name" /></label>
+          <label>Roll Number<input id="rollInput" required placeholder="Enter your roll number" /></label>
+          <label>Branch<select id="branchInput" required><option value="">Select your branch</option><option>CSE</option><option>CSE (AI & DS)</option><option>IT</option><option>ECE</option><option>Other</option></select></label>
+          <label>Year<select id="yearInput"><option>1st Year</option><option selected>2nd Year</option><option>3rd Year</option><option>4th Year</option></select></label>
+          <label>Difficulty<select id="difficultyInput"><option>Mixed</option><option>Easy</option><option>Medium</option><option>Hard</option></select></label>
+          <label>Categories<select id="categoryInput"><option>All Categories</option><option>Quantitative</option><option>Logical</option><option>Verbal</option></select></label>
+          <div class="form-actions"><button type="button" class="secondary-btn" data-screen="home">Back</button><button class="primary-btn" type="submit">Continue to Test →</button></div>
+        </form>
+      </div>
+    </section>
+
+    <section id="testScreen" class="screen">
+      <div class="test-shell">
+        <div class="test-header">
+          <div><span class="eyebrow">MINDMETRIX ASSESSMENT</span><h2 id="testTitle">Question 1 of 20</h2></div>
+          <div id="timer" class="timer">15:00</div>
+        </div>
+
+        <div class="test-toolbar">
+          <div id="categoryBadge" class="badge">Quantitative</div>
+          <div class="progress-wrap"><div id="progressText">0%</div><div class="progress-bar"><div id="progressFill"></div></div></div>
+          <button id="reviewBtn" class="secondary-btn small">☆ Mark for Review</button>
+        </div>
+
+        <div class="question-nav" id="questionNav"></div>
+
+        <article class="question-card">
+          <div class="question-meta"><span id="difficultyBadge" class="difficulty">Medium</span><span id="questionNumber">Q1</span></div>
+          <h3 id="questionText">Question text</h3>
+          <div id="options" class="options"></div>
+          <div id="explanationBox" class="explanation hidden"></div>
+        </article>
+
+        <div class="test-footer">
+          <button id="prevBtn" class="secondary-btn">← Previous</button>
+          <span id="answeredCount">0 answered</span>
+          <button id="nextBtn" class="primary-btn">Next →</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultScreen" class="screen">
+      <div class="result-shell">
+        <div class="result-hero">
+          <span class="eyebrow">TEST COMPLETED</span>
+          <h1 id="resultTitle">Great job! 🎉</h1>
+          <div class="score-ring"><strong id="scoreValue">0/20</strong><span id="percentageValue">0%</span></div>
+          <p id="performanceMessage">Your result is ready.</p>
+        </div>
+        <div class="result-grid">
+          <article class="result-card"><h3>Category Performance</h3><div id="categoryResults"></div></article>
+          <article class="result-card"><h3>Performance Level</h3><div id="levelResult" class="level-box"></div><div class="mini-stats"><span>Correct <b id="correctStat">0</b></span><span>Wrong <b id="wrongStat">0</b></span><span>Skipped <b id="skippedStat">0</b></span></div></article>
+        </div>
+        <div class="result-card">
+          <h3>What to improve</h3>
+          <div id="improvementList" class="improvement-list"></div>
+        </div>
+        <div class="result-actions">
+          <button id="downloadBtn" class="secondary-btn">🖨️ Print / Save Result</button>
+          <button id="reviewAnswersBtn" class="secondary-btn">Review Answers</button>
+          <button id="retakeBtn" class="primary-btn">Retake Test</button>
+          <button class="secondary-btn" data-screen="dashboard">Open Dashboard</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PHASE 2: ADVANCED EXPERIENCE ================= -->
+    <section id="dashboardScreen" class="screen">
+      <div class="dashboard-shell">
+        <div class="dashboard-heading"><div><span class="eyebrow">PHASE 2 • ADVANCED EXPERIENCE</span><h1 id="welcomeTitle">Welcome back 👋</h1><p>See your progress, history and strengths in one place.</p></div><button class="primary-btn" data-action="open-test">Take New Test</button></div>
+
+        <div class="stat-grid">
+          <article class="stat-card"><span>Latest Score</span><b id="dashLatest">—</b><small>Last completed test</small></article>
+          <article class="stat-card"><span>Tests Taken</span><b id="dashTests">0</b><small>Saved on this device</small></article>
+          <article class="stat-card"><span>Best Score</span><b id="dashBest">—</b><small>Your personal best</small></article>
+          <article class="stat-card"><span>Average</span><b id="dashAverage">—</b><small>Across completed tests</small></article>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="dashboard-card chart-card">
+            <div class="card-heading"><div><h2>Category Performance</h2><p>Your latest category breakdown</p></div><span>📈</span></div>
+            <div id="chartBars" class="chart-bars"></div>
+          </article>
+          <article class="dashboard-card">
+            <div class="card-heading"><div><h2>Skill Snapshot</h2><p>Based on your latest result</p></div><span>🎯</span></div>
+            <div id="skillSnapshot"></div>
+          </article>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="dashboard-card">
+            <div class="card-heading"><div><h2>Recent Attempts</h2><p>Your test history</p></div><span>🗂️</span></div>
+            <div id="historyList" class="history-list"></div>
+          </article>
+          <article class="dashboard-card">
+            <div class="card-heading"><div><h2>Leaderboard</h2><p>Demo local leaderboard</p></div><span>🏆</span></div>
+            <div class="leaderboard">
+              <div><span>🥇 Alex</span><b>95%</b></div><div><span>🥈 Priya</span><b>92%</b></div><div><span>🥉 Rahul</span><b>89%</b></div><div class="you-row"><span>⭐ You</span><b id="leaderYou">—</b></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="howScreen" class="screen">
+      <div class="how-shell">
+        <div class="section-heading centered"><span class="eyebrow">MINDMETRIX GUIDE</span><h1>How the platform works</h1><p>Phase 1 gives you a reliable test. Phase 2 turns it into a learning and tracking platform.</p></div>
+        <div class="phase-grid">
+          <article class="phase-card phase-one"><span>PHASE 1</span><h2>Core Experience</h2><ul><li>Landing page & feature cards</li><li>Student details validation</li><li>20-question timed assessment</li><li>Next/Previous navigation</li><li>Question navigator</li><li>Mark for review</li><li>Answer selection & scoring</li><li>Explanations</li><li>Result summary</li><li>Retake test</li><li>Responsive layout & dark mode</li></ul></article>
+          <article class="phase-card phase-two"><span>PHASE 2</span><h2>Advanced Experience</h2><ul><li>Randomized question bank</li><li>Category analytics</li><li>Performance charts</li><li>Student dashboard</li><li>Attempt history</li><li>Leaderboard</li><li>Print/save result</li><li>Skill recommendations</li><li>Improved visual design & micro-interactions</li></ul></article>
+        </div>
+        <div class="note-card"><b>Future Phase 3:</b> A real login system, database, admin panel, secure backend/API and true AI analysis should be added later. The current demo stores data in browser localStorage, so it is not a production authentication system.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>© 2026 MINDMETRIX</span><span>Test Your Skills • Track Your Progress</span></footer>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
